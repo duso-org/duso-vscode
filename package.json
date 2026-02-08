@@ -56,6 +56,12 @@
         "scopeName": "source.duso",
         "path": "./syntaxes/script.tmLanguage.json"
       }
+    ],
+    "commands": [
+      {
+        "command": "duso.runScript",
+        "title": "Run Duso Script"
+      }
     ]
   }
 }

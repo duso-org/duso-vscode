@@ -75,8 +75,33 @@ async function activate(context) {
     }
   );
 
+  // Register command to run/build current Duso script
+  const runScriptCommand = vscode.commands.registerCommand(
+    'duso.runScript',
+    async () => {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        vscode.window.showErrorMessage('No file open');
+        return;
+      }
+
+      const fileName = editor.document.fileName;
+
+      // Create or reuse integrated terminal
+      let terminal = vscode.window.terminals.find(t => t.name === 'Duso');
+      if (!terminal) {
+        terminal = vscode.window.createTerminal('Duso');
+      }
+      terminal.show();
+
+      // Run the script
+      terminal.sendText(`duso "${fileName}"`, true);
+    }
+  );
+
   context.subscriptions.push(client);
   context.subscriptions.push(viewDocCommand);
+  context.subscriptions.push(runScriptCommand);
 }
 
 /**

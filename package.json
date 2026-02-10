@@ -2,9 +2,9 @@
   "name": "duso",
   "displayName": "Duso",
   "description": "Syntax highlighting for Duso - a lightweight scripting language for AI agents and automation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "ludonode",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "icon": "icon.png",
   "repository": {
     "type": "git",

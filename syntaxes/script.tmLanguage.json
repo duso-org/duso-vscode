@@ -82,22 +82,22 @@
     "strings": {
       "patterns": [
         {
-          "name": "string.regexp.duso",
+          "name": "source.regexp.duso",
           "begin": "~",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.duso"
+              "name": "punctuation.definition.regexp.begin.duso"
             }
           },
           "end": "~",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.duso"
+              "name": "punctuation.definition.regexp.end.duso"
             }
           },
           "patterns": [
             {
-              "name": "constant.character.escape.duso",
+              "name": "constant.character.escape.regexp.duso",
               "match": "\\\\."
             }
           ]
@@ -233,7 +233,7 @@
       "patterns": [
         {
           "name": "support.function.duso",
-          "match": "\\b(abs|append|busy|ceil|clamp|contains|deep_copy|floor|round|sqrt|pow|max|min|format_json|parse_json|format_time|parse_time|join|keys|len|load|lower|print|replace|save|sleep|sort|split|substr|tostring|tonumber|tobool|trim|type|upper|values|map|filter|reduce|breakpoint|watch|env|input|exit|throw|doc|run|spawn|parallel|context|datastore|http_client|http_server|include|require|range|sys|now|write)\\b"
+          "match": "\\b(abs|acos|append_file|asin|atan|atan2|breakpoint|busy|ceil|clamp|contains|context|copy_file|cos|current_dir|datastore|deep_copy|doc|env|exit|exp|fetch|file_exists|file_type|filter|find|floor|format_json|format_time|http_server|input|join|keys|len|list_dir|list_files|load|log|lower|ln|make_dir|map|max|min|move_file|now|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|replace|require|round|run|save|shift|sin|sleep|sort|spawn|split|sqrt|substr|tan|template|throw|tobool|tonumber|tostring|trim|type|unshift|upper|uuid|values|watch|write)\\b"
         }
       ]
     },
@@ -284,12 +284,20 @@
           "match": "(==|!=|<=|>=|<|>)"
         },
         {
+          "name": "keyword.operator.assignment.duso",
+          "match": "(\\+=|-=|\\*=|/=|%=|=)"
+        },
+        {
           "name": "keyword.operator.arithmetic.duso",
           "match": "(\\+|-|\\*|/|%)"
         },
         {
-          "name": "keyword.operator.assignment.duso",
-          "match": "="
+          "name": "keyword.operator.postfix.duso",
+          "match": "(\\+\\+|--)"
+        },
+        {
+          "name": "keyword.operator.ternary.duso",
+          "match": "[?:]"
         }
       ]
     },

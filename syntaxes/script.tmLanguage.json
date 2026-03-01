@@ -233,7 +233,7 @@
       "patterns": [
         {
           "name": "support.function.duso",
-          "match": "\\b(abs|acos|append_file|asin|atan|atan2|breakpoint|busy|ceil|clamp|contains|context|copy_file|cos|current_dir|datastore|deep_copy|doc|env|exit|exp|fetch|file_exists|file_type|filter|find|floor|format_json|format_time|http_server|include|input|join|keys|len|list_dir|list_files|load|log|lower|ln|make_dir|map|max|min|move_file|now|parallel|parse|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|replace|repeat|require|round|run|save|shift|sin|sleep|sort|spawn|split|sqrt|substr|sys|tan|template|throw|tobool|tonumber|tostring|trim|type|unshift|upper|uuid|values|watch|write)\\b"
+          "match": "\\b(abs|acos|append_file|asin|atan|atan2|breakpoint|busy|ceil|clamp|contains|context|copy_file|cos|current_dir|datastore|deep_copy|doc|env|exit|exp|fetch|file_exists|file_type|filter|find|floor|format_json|format_time|http_server|include|input|join|keys|len|list_dir|list_files|load|log|lower|ln|make_dir|map|markdown_ansi|markdown_html|max|min|move_file|now|parallel|parse|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|replace|repeat|require|round|run|save|shift|sin|sleep|sort|spawn|split|sqrt|substr|sys|tan|template|throw|tobool|tonumber|tostring|trim|type|unshift|upper|uuid|values|watch|write)\\b"
         }
       ]
     },

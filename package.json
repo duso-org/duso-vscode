@@ -2,14 +2,13 @@
   "name": "duso",
   "displayName": "Duso",
   "description": "Syntax highlighting for Duso - a lightweight scripting language for AI agents and automation",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "publisher": "duso",
   "license": "Apache-2.0",
   "icon": "icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/duso-org/duso.git",
-    "directory": "vscode"
+    "url": "https://github.com/duso-org/duso-vscode.git"
   },
   "homepage": "https://duso.rocks",
   "keywords": [

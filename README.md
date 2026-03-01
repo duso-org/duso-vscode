@@ -2,6 +2,10 @@
 
 Language Server Protocol (LSP) support for Duso in VSCode.
 
+> **⚠️ Requires Duso Installation**
+>
+> The LSP features (error diagnostics, hover documentation, go to definition, find references) require the `duso` binary to be installed on your system. Visit [duso.rocks](https://duso.rocks) for installation instructions.
+
 ## Features
 
 - **Syntax Highlighting** - Color coded syntax for Duso scripts

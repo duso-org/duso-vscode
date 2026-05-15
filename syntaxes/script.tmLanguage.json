@@ -233,7 +233,7 @@
       "patterns": [
         {
           "name": "support.function.duso",
-          "match": "\\b(abs|acos|asin|atan|atan2|append_file|breakpoint|busy|ceil|clamp|contains|context|copy_file|cos|current_dir|datastore|decode_base64|deep_copy|doc|encode_base64|ends_with|env|exit|exp|fetch|file_exists|file_type|filter|find|floor|format_json|format_time|hash|hash_password|http_server|include|input|join|keys|kill|len|list_dir|list_files|load|log|ln|lower|make_dir|map|markdown_ansi|markdown_html|max|min|move_file|now|parallel|parse|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|replace|repeat|require|round|run|save|shift|sin|sleep|sort|spawn|split|sqrt|starts_with|substr|sys|tan|template|throw|tobool|tonumber|tostring|trim|type|unshift|upper|uuid|values|verify_password|watch|write)\\b"
+          "match": "\\b(abs|acos|append_file|asin|assert|atan|atan2|busy|breakpoint|ceil|clamp|contains|context|copy_file|cos|current_dir|datastore|debug|decode_base64|deep_copy|doc|ec_from_jwk|encode_base64|ends_with|env|error|exit|exp|fetch|file_exists|file_type|filter|find|floor|format_json|format_time|hash|hash_password|http_server|include|input|join|keys|kill|len|list_dir|list_files|load|load_binary|log|ln|lower|make_dir|map|markdown_ansi|markdown_html|markdown_text|max|min|move_file|now|parallel|parse|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|replace|repeat|require|round|rsa_from_jwk|run|save|save_binary|shift|sign_ec|sign_rsa|sin|sleep|sort|spawn|split|sqrt|starts_with|substr|sys|tan|template|throw|timer|timestamp|tobool|tonumber|tostring|trim|type|unshift|upper|uuid|values|verify_ec|verify_password|verify_rsa|watch|write)\\b"
         }
       ]
     },

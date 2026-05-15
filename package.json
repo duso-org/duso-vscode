@@ -1,7 +1,7 @@
 {
   "name": "duso",
   "displayName": "Duso",
-  "description": "Syntax highlighting for Duso - a lightweight scripting language for AI agents and automation",
+  "description": "Language support for Duso",
   "version": "1.0.10",
   "publisher": "duso",
   "license": "Apache-2.0",

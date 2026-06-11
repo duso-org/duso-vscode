@@ -1,8 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "fileTypes": [
+    "du"
+  ],
   "name": "Duso",
-  "scopeName": "source.duso",
-  "fileTypes": ["du"],
   "patterns": [
     {
       "include": "#comments"
@@ -39,10 +40,17 @@
     }
   ],
   "repository": {
+    "builtins": {
+      "patterns": [
+        {
+          "match": "\\b(abs|acos|adjust_image_opacity|append_file|asin|assert|atan|atan2|breakpoint|busy|ceil|clamp|composite_image|contains|context|convert_image|copy_file|cos|crop_image|current_dir|datastore|debug|decode_base64|deep_copy|doc|ec_from_jwk|encode_base64|ends_with|env|error|exit|exp|fetch|file_exists|file_type|filter|find|flip_image_x|flip_image_y|floor|format_csv|format_json|format_time|grayscale_image|hash|hash_password|http_server|include|input|join|keys|kill|len|list_dir|list_files|ln|load|load_binary|load_image|log|lower|make_dir|map|markdown_ansi|markdown_html|markdown_text|max|min|move_file|now|pad_left|pad_right|parallel|parse|parse_csv|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|repeat|replace|require|rotate_image|round|rsa_from_jwk|run|save|save_binary|save_image|scale_image|set_image_opacity|shift|sign_ec|sign_rsa|sin|sleep|sort|spawn|split|sql|sqrt|starts_with|substr|sys|tan|template|throw|timer|timestamp|tobool|tonumber|tostring|trim|type|unshift|upper|uuid|values|verify_ec|verify_password|verify_rsa|watch|write)\\b",
+          "name": "support.function.duso"
+        }
+      ]
+    },
     "comments": {
       "patterns": [
         {
-          "name": "comment.block.duso",
           "begin": "/\\*",
           "beginCaptures": {
             "0": {
@@ -55,9 +63,9 @@
               "name": "punctuation.definition.comment.end.duso"
             }
           },
+          "name": "comment.block.duso",
           "patterns": [
             {
-              "name": "comment.block.duso",
               "begin": "/\\*",
               "beginCaptures": {
                 "0": {
@@ -69,20 +77,146 @@
                 "0": {
                   "name": "punctuation.definition.comment.end.duso"
                 }
-              }
+              },
+              "name": "comment.block.duso"
             }
           ]
         },
         {
-          "name": "comment.line.duso",
-          "match": "//.*?$"
+          "match": "//.*?$",
+          "name": "comment.line.duso"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "match": "\\b(true|false|nil)\\b",
+          "name": "constant.language.duso"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.duso"
+            },
+            "2": {
+              "name": "entity.name.function.duso"
+            }
+          },
+          "match": "\\b(function)\\s+([a-z_][a-z0-9_]*)\\b",
+          "name": "meta.function.duso"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "match": "\\b[a-z_][a-z0-9_]*\\b",
+          "name": "variable.other.duso"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(and|break|catch|continue|do|else|elseif|end|false|for|function|if|in|nil|not|or|raw|return|then|true|try|var|while)\\b",
+          "name": "keyword.control.duso"
+        }
+      ]
+    },
+    "multiline-strings": {
+      "patterns": [
+        {
+          "applyEndPatternLast": true,
+          "begin": "\"\"\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.bracket.multiline.begin.duso"
+            }
+          },
+          "contentName": "string.quoted.double.duso",
+          "end": "\"\"\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.bracket.multiline.end.duso"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#template-expression"
+            }
+          ]
+        },
+        {
+          "applyEndPatternLast": true,
+          "begin": "'''",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.bracket.multiline.begin.duso"
+            }
+          },
+          "contentName": "string.quoted.single.duso",
+          "end": "'''",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.bracket.multiline.end.duso"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#template-expression"
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b([0-9]+(\\.[0-9]+)?)\\b",
+          "name": "constant.numeric.duso"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "(==|!=|<=|>=|<|>)",
+          "name": "keyword.operator.comparison.duso"
+        },
+        {
+          "match": "(\\+=|-=|\\*=|/=|%=|=)",
+          "name": "keyword.operator.assignment.duso"
+        },
+        {
+          "match": "(\\+|-|\\*|/|%)",
+          "name": "keyword.operator.arithmetic.duso"
+        },
+        {
+          "match": "(\\+\\+|--)",
+          "name": "keyword.operator.postfix.duso"
+        },
+        {
+          "match": "[?:]",
+          "name": "keyword.operator.ternary.duso"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "match": "[{}\\[\\]().,;]",
+          "name": "punctuation.duso"
         }
       ]
     },
     "strings": {
       "patterns": [
         {
-          "name": "source.regexp.duso",
           "begin": "~",
           "beginCaptures": {
             "0": {
@@ -95,21 +229,22 @@
               "name": "punctuation.definition.regexp.end.duso"
             }
           },
+          "name": "source.regexp.duso",
           "patterns": [
             {
-              "name": "constant.character.escape.regexp.duso",
-              "match": "\\\\."
+              "match": "\\\\.",
+              "name": "constant.character.escape.regexp.duso"
             }
           ]
         },
         {
-          "name": "string.quoted.double.duso",
           "begin": "\"",
           "end": "\"",
+          "name": "string.quoted.double.duso",
           "patterns": [
             {
-              "name": "constant.character.escape.duso",
-              "match": "\\\\([\\\\\"'ntr{}])"
+              "match": "\\\\([\\\\\"'ntr{}])",
+              "name": "constant.character.escape.duso"
             },
             {
               "include": "#template-expression"
@@ -117,13 +252,13 @@
           ]
         },
         {
-          "name": "string.quoted.single.duso",
           "begin": "'",
           "end": "'",
+          "name": "string.quoted.single.duso",
           "patterns": [
             {
-              "name": "constant.character.escape.duso",
-              "match": "\\\\([\\\\\"'ntr{}])"
+              "match": "\\\\([\\\\\"'ntr{}])",
+              "name": "constant.character.escape.duso"
             },
             {
               "include": "#template-expression"
@@ -132,56 +267,17 @@
         }
       ]
     },
-    "multiline-strings": {
+    "structures": {
       "patterns": [
         {
-          "begin": "\"\"\"",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.bracket.multiline.begin.duso"
-            }
-          },
-          "end": "\"\"\"",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.bracket.multiline.end.duso"
-            }
-          },
-          "contentName": "string.quoted.double.duso",
-          "applyEndPatternLast": true,
-          "patterns": [
-            {
-              "include": "#template-expression"
-            }
-          ]
-        },
-        {
-          "begin": "'''",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.bracket.multiline.begin.duso"
-            }
-          },
-          "end": "'''",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.bracket.multiline.end.duso"
-            }
-          },
-          "contentName": "string.quoted.single.duso",
-          "applyEndPatternLast": true,
-          "patterns": [
-            {
-              "include": "#template-expression"
-            }
-          ]
+          "match": "\\b([A-Z][A-Za-z0-9_]*)\\s*(?=\\()",
+          "name": "entity.name.function.duso"
         }
       ]
     },
     "template-expression": {
       "patterns": [
         {
-          "name": "meta.template.duso",
           "begin": "{{",
           "beginCaptures": {
             "0": {
@@ -194,6 +290,7 @@
               "name": "punctuation.definition.template.end.duso"
             }
           },
+          "name": "meta.template.duso",
           "patterns": [
             {
               "include": "#builtins"
@@ -216,106 +313,7 @@
           ]
         }
       ]
-    },
-    "keywords": {
-      "patterns": [
-        {
-          "name": "keyword.control.duso",
-          "match": "\\b(if|then|elseif|else|end|while|do|for|in|function|return|break|continue|try|catch|var|raw)\\b"
-        },
-        {
-          "name": "keyword.operator.duso",
-          "match": "\\b(and|or|not)\\b"
-        }
-      ]
-    },
-    "builtins": {
-      "patterns": [
-        {
-          "name": "support.function.duso",
-          "match": "\\b(abs|acos|append_file|asin|assert|atan|atan2|busy|breakpoint|ceil|clamp|contains|context|copy_file|cos|current_dir|datastore|debug|decode_base64|deep_copy|doc|ec_from_jwk|encode_base64|ends_with|env|error|exit|exp|fetch|file_exists|file_type|filter|find|floor|format_json|format_time|hash|hash_password|http_server|include|input|join|keys|kill|len|list_dir|list_files|load|load_binary|log|ln|lower|make_dir|map|markdown_ansi|markdown_html|markdown_text|max|min|move_file|now|parallel|parse|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|replace|repeat|require|round|rsa_from_jwk|run|save|save_binary|shift|sign_ec|sign_rsa|sin|sleep|sort|spawn|split|sqrt|starts_with|substr|sys|tan|template|throw|timer|timestamp|tobool|tonumber|tostring|trim|type|unshift|upper|uuid|values|verify_ec|verify_password|verify_rsa|watch|write)\\b"
-        }
-      ]
-    },
-    "structures": {
-      "patterns": [
-        {
-          "name": "entity.name.function.duso",
-          "match": "\\b([A-Z][A-Za-z0-9_]*)\\s*(?=\\()"
-        }
-      ]
-    },
-    "functions": {
-      "patterns": [
-        {
-          "name": "meta.function.duso",
-          "match": "\\b(function)\\s+([a-z_][a-z0-9_]*)\\b",
-          "captures": {
-            "1": {
-              "name": "keyword.control.duso"
-            },
-            "2": {
-              "name": "entity.name.function.duso"
-            }
-          }
-        }
-      ]
-    },
-    "constants": {
-      "patterns": [
-        {
-          "name": "constant.language.duso.TEST_CONSTANT",
-          "match": "\\b(true|false|nil)\\b"
-        }
-      ]
-    },
-    "numbers": {
-      "patterns": [
-        {
-          "name": "constant.numeric.duso",
-          "match": "\\b([0-9]+(\\.[0-9]+)?)\\b"
-        }
-      ]
-    },
-    "operators": {
-      "patterns": [
-        {
-          "name": "keyword.operator.comparison.duso",
-          "match": "(==|!=|<=|>=|<|>)"
-        },
-        {
-          "name": "keyword.operator.assignment.duso",
-          "match": "(\\+=|-=|\\*=|/=|%=|=)"
-        },
-        {
-          "name": "keyword.operator.arithmetic.duso",
-          "match": "(\\+|-|\\*|/|%)"
-        },
-        {
-          "name": "keyword.operator.postfix.duso",
-          "match": "(\\+\\+|--)"
-        },
-        {
-          "name": "keyword.operator.ternary.duso",
-          "match": "[?:]"
-        }
-      ]
-    },
-    "punctuation": {
-      "patterns": [
-        {
-          "name": "punctuation.duso",
-          "match": "[{}\\[\\]().,;]"
-        }
-      ]
-    },
-    "identifiers": {
-      "patterns": [
-        {
-          "name": "variable.other.duso",
-          "match": "\\b[a-z_][a-z0-9_]*\\b"
-        }
-      ]
     }
-  }
+  },
+  "scopeName": "source.duso"
 }

@@ -17,7 +17,7 @@ async function activate(context) {
   // Server options: launch duso LSP server
   const serverOptions = {
     command: 'duso',
-    args: ['-lsp'],
+    args: ['lsp'],
   };
 
   // Client options

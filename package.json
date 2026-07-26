@@ -2,7 +2,7 @@
   "name": "duso",
   "displayName": "Duso",
   "description": "Language support for Duso",
-  "version": "1.3.7",
+  "version": "1.6.21",
   "publisher": "duso",
   "license": "Apache-2.0",
   "icon": "icon.png",
@@ -33,7 +33,8 @@
     "vscode-languageclient": "^8.1.0"
   },
   "devDependencies": {
-    "@types/node": "^16.0.0"
+    "@types/node": "^16.0.0",
+    "@vscode/vsce": "^3.9.2"
   },
   "contributes": {
     "languages": [

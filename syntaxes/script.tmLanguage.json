@@ -43,7 +43,7 @@
     "builtins": {
       "patterns": [
         {
-          "match": "\\b(abs|acos|adjust_image_opacity|append_file|asin|assert|atan|atan2|breakpoint|busy|ceil|clamp|composite_image|contains|context|convert_image|copy_file|cos|crop_image|current_dir|datastore|debug|decode_base64|deep_copy|doc|ec_from_jwk|encode_base64|ends_with|env|error|exit|exp|fetch|file_exists|file_type|filter|find|flip_image_x|flip_image_y|floor|format_csv|format_json|format_time|grayscale_image|hash|hash_password|http_server|include|input|join|keys|kill|len|list_dir|list_files|ln|load|load_binary|load_image|log|lower|make_dir|map|markdown_ansi|markdown_html|markdown_text|max|min|move_file|now|pad_left|pad_right|parallel|parse|parse_csv|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|repeat|replace|require|rotate_image|round|rsa_from_jwk|run|save|save_binary|save_image|scale_image|set_image_opacity|shift|sign_ec|sign_rsa|sin|sleep|sort|spawn|split|sql|sqrt|starts_with|substr|sys|tan|template|throw|timer|timestamp|tobool|tonumber|tostring|trim|type|unshift|upper|uuid|values|verify_ec|verify_password|verify_rsa|watch|write)\\b",
+          "match": "\\b(abs|acos|adjust_image_opacity|append_file|asin|assert|atan|atan2|breakpoint|busy|ceil|clamp|composite_image|contains|context|convert_image|copy_file|cos|crop_image|current_dir|datastore|debug|decode_base64|decrypt|deep_copy|doc|ec_from_jwk|encode_base64|encrypt|ends_with|env|error|exit|exp|fetch|fibonacci|file_exists|file_type|filter|find|flip_image_x|flip_image_y|floor|format_csv|format_json|format_time|grayscale_image|hash|hash_password|hmac|http_server|include|input|join|keys|kill|len|list_dir|list_files|ln|load|load_binary|load_image|log|lower|make_dir|map|markdown_ansi|markdown_html|markdown_text|max|min|move_file|now|pad_left|pad_right|parallel|parse|parse_csv|parse_json|parse_time|pi|pop|pow|print|push|random|range|reduce|remove_dir|remove_file|rename_file|repeat|replace|require|rotate_image|round|rsa_from_jwk|run|save|save_binary|save_image|scale_image|send_websocket|set_image_opacity|shift|sign_ec|sign_rsa|sin|sleep|sort|spawn|split|sql|sqrt|starts_with|substr|sys|tan|template|throw|timer|timestamp|tobool|tonumber|toregex|tostring|trim|type|unshift|upper|uuid|values|verify_ec|verify_ed25519|verify_password|verify_rsa|watch|websocket|write)\\b",
           "name": "support.function.duso"
         }
       ]
@@ -185,7 +185,7 @@
     "operators": {
       "patterns": [
         {
-          "match": "(==|!=|<=|>=|<|>)",
+          "match": "(==|!=|\u003c=|\u003e=|\u003c|\u003e)",
           "name": "keyword.operator.comparison.duso"
         },
         {

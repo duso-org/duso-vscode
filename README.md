@@ -81,7 +81,7 @@ If duso is not found, the extension will fail to start. Make sure you've run `./
 
 ## Architecture
 
-The extension launches `duso -lsp` which:
+The extension launches `duso lsp` which:
 1. Reads LSP messages from VSCode over stdin
 2. Parses documents and analyzes them
 3. Sends diagnostics, hover info, and definitions back to VSCode
